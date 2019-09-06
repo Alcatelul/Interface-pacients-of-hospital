@@ -1,0 +1,24 @@
+<!DOCTYPE spital[
+<!ELEMENT spital (sectie+)>
+<!ELEMENT sectie (doctor+)>
+<!ELEMENT doctor (nume_doctor,prenume_doctor,data_nasterii_doctor,telefon_doctor,program_lucru,lista_pacienti)>
+<!ELEMENT nume_doctor (#PCDATA)>
+<!ELEMENT prenume_doctor (#PCDATA)>
+<!ELEMENT data_nasterii_doctor (#PCDATA)>
+<!ELEMENT telefon_doctor (#PCDATA)>
+<!ELEMENT program_lucru (#PCDATA)>
+<!ELEMENT lista_pacienti (pacient+)>
+<!ELEMENT pacient (nume_pacient,prenume_pacient,sex_pacient,telefon_pacient,data_nasterii_pacient,data_inscrierii)>
+<!ELEMENT nume_pacient (#PCDATA)>
+<!ELEMENT prenume_pacient (#PCDATA)>
+<!ELEMENT sex_pacient (#PCDATA)>
+<!ELEMENT telefon_pacient (#PCDATA)>
+<!ELEMENT data_nasterii_pacient (#PCDATA)>
+<!ELEMENT data_inscrierii (#PCDATA)>
+
+<!ATTLIST sectie 
+			ID_sectie CDATA #REQUIRED
+            nume_sectie CDATA #REQUIRED>
+<!ATTLIST program_lucru 
+			in_weekend CDATA #REQUIRED>
+]>

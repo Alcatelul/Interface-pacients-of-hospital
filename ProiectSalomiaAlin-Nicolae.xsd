@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" >
+	
+	<xs:element name="spital">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sectie" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="sectie">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="doctor" maxOccurs="unbounded" />
+			</xs:sequence>
+            <xs:attribute name="ID_sectie" type="ID_sec" use="required"/>
+          <xs:attribute name="nume_sectie" type="nume_doc" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="doctor">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="nume_doctor" />
+				<xs:element name="prenume_doctor" />
+				<xs:element name="data_nasterii_doctor" />
+				<xs:element name="telefon_doctor" />
+				<xs:element name="program_lucru" />
+				<xs:element name="lista_pacienti" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="nume_doc">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]([a-z])*"/>
+		</xs:restriction>
+	</xs:simpleType>
+		
+		
+	<xs:element name="nume_doctor" type="nume_doc"/>
+
+	
+	<xs:element name="prenume_doctor" type="nume_doc"/>
+	
+	<xs:simpleType name="data_nasterii_doc">
+			<xs:restriction base="xs:date">
+				<xs:minInclusive value="1953-01-01"/>
+				<xs:maxInclusive value="1994-01-01"/>
+			</xs:restriction>
+	</xs:simpleType>
+		
+	<xs:element name="data_nasterii_doctor" type="data_nasterii_doc"/>
+	
+	<xs:simpleType name="tel_doc">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="100000000"/>
+			<xs:maxInclusive value="999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="telefon_doctor" type="tel_doc" />
+	
+    <xs:simpleType name="prg_lucru">
+         <xs:restriction base="xs:string">
+          </xs:restriction>
+   </xs:simpleType>
+  
+	<xs:element name="program_lucru">
+  		<xs:complexType>
+  			<xs:simpleContent>
+    			<xs:extension base="prg_lucru">
+      				<xs:attribute name="in_weekend" type="in_week" use="required"/>
+    			</xs:extension>
+  			</xs:simpleContent>
+		</xs:complexType>
+    </xs:element>
+  
+	<xs:element name="lista_pacienti">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="pacient" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="pacient">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="nume_pacient" />
+				<xs:element name="prenume_pacient" />
+				<xs:element name="data_nasterii_pacient" />
+				<xs:element name="telefon_pacient" />
+				<xs:element name="sex_pacient" />
+				<xs:element name="data_inscrierii" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="nume_pacient" type="nume_doc"/>
+	
+	<xs:element name="prenume_pacient" type="nume_doc"/>
+	
+	<xs:element name="telefon_pacient" type="tel_doc"/>
+	
+	<xs:element name="sex_pacient">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="masculin|feminin"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:simpleType name="data_nasterii_pac_fara_ora">
+			<xs:restriction base="xs:date">
+				<xs:minInclusive value="1900-01-01"/>
+				<xs:maxInclusive value="2000-01-01"/>
+			</xs:restriction>
+	</xs:simpleType>
+  
+  <xs:complexType name="data_nasterii_pac">
+  <xs:simpleContent>
+    <xs:extension base="data_nasterii_pac_fara_ora">
+      <xs:attribute name="ora_nastere_pac">
+        <xs:simpleType>
+          <xs:restriction base="xs:time">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+	<xs:element name="data_nasterii_pacient" type="data_nasterii_pac"/>
+	
+	<xs:element name="data_inscrierii" type="data_nasterii_pac"/>
+	
+	<xs:simpleType name="ID_sec">
+		<xs:restriction base="xs:integer">
+		</xs:restriction>
+	</xs:simpleType>
+  
+	<xs:simpleType name="in_week">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="da|nu"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	
+</xs:schema>

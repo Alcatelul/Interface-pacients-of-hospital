@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-2" standalone="no"?>
+<spital
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Schema XML.xsd">
+
+<!--
+<!DOCTYPE spital[
+<!ELEMENT spital (sectie+)>
+<!ELEMENT sectie (doctor+)>
+<!ELEMENT doctor (nume_doctor,prenume_doctor,data_nasterii_doctor,telefon_doctor,program_lucru,lista_pacienti)>
+<!ELEMENT nume_doctor (#PCDATA)>
+<!ELEMENT prenume_doctor (#PCDATA)>
+<!ELEMENT data_nasterii_doctor (#PCDATA)>
+<!ELEMENT telefon_doctor (#PCDATA)>
+<!ELEMENT program_lucru (#PCDATA)>
+<!ELEMENT lista_pacienti (pacient+)>
+<!ELEMENT pacient (nume_pacient,prenume_pacient,sex_pacient,telefon_pacient,data_nasterii_pacient,data_inscrierii)>
+<!ELEMENT nume_pacient (#PCDATA)>
+<!ELEMENT prenume_pacient (#PCDATA)>
+<!ELEMENT sex_pacient (#PCDATA)>
+<!ELEMENT telefon_pacient (#PCDATA)>
+<!ELEMENT data_nasterii_pacient (#PCDATA)>
+<!ELEMENT data_inscrierii (#PCDATA)>
+
+<!ATTLIST sectie 
+			ID_sectie CDATA #REQUIRED
+            nume_sectie CDATA #REQUIRED>
+<!ATTLIST program_lucru 
+			in_weekend CDATA #REQUIRED>
+]>
+ -->
+	<sectie ID_sectie="1" nume_sectie="Ortopedie">
+		<doctor>
+			<nume_doctor>Marina</nume_doctor>
+			<prenume_doctor>Maria</prenume_doctor>
+			<data_nasterii_doctor>1990-12-14</data_nasterii_doctor>
+			<telefon_doctor>
+				668753
+			</telefon_doctor>
+			<program_lucru in_weekend="nu">08:00-15:00</program_lucru>
+			<lista_pacienti>
+				<pacient>
+					<nume_pacient>Marian</nume_pacient>
+					<prenume_pacient>Ion</prenume_pacient>
+					<sex_pacient>masculin</sex_pacient>
+					<telefon_pacient>668753
+					</telefon_pacient>
+					<data_nasterii_pacient ora_nastere_pac="15:01">1995-03-09</data_nasterii_pacient>
+					<data_inscrierii>2017-11-17</data_inscrierii>
+				</pacient>
+				<pacient>
+					<nume_pacient>Buse</nume_pacient>
+					<prenume_pacient>Constantin</prenume_pacient>
+					<sex_pacient>masculin</sex_pacient>
+					<telefon_pacient>668753
+					</telefon_pacient>
+					<data_nasterii_pacient ora_nastere_pac="15:01">1995-03-09</data_nasterii_pacient>
+					<data_inscrierii>2017-11-17</data_inscrierii>
+				</pacient>
+			</lista_pacienti>
+		</doctor>
+	</sectie>
+
+	<sectie ID_sectie="2" nume_sectie="Cardiologie">
+		<doctor>
+			<nume_doctor>Carla</nume_doctor>
+			<prenume_doctor>Ioana</prenume_doctor>
+			<data_nasterii_doctor>1990-12-16</data_nasterii_doctor>
+			<telefon_doctor>668753
+			</telefon_doctor>
+			<program_lucru in_weekend="nu">08:00-15:00</program_lucru>
+			<lista_pacienti>
+				<pacient>
+					<nume_pacient>Ion</nume_pacient>
+					<prenume_pacient>Carl</prenume_pacient>
+					<sex_pacient>masculin</sex_pacient>
+					<telefon_pacient>668753
+					</telefon_pacient>
+					<data_nasterii_pacient ora_nastere_pac="15:01">1993-03-09</data_nasterii_pacient>
+					<data_inscrierii>2017-11-19</data_inscrierii>
+				</pacient>
+				<pacient>
+					<nume_pacient>Victor</nume_pacient>
+					<prenume_pacient>Ionut</prenume_pacient>
+					<sex_pacient>masculin</sex_pacient>
+					<telefon_pacient>668753
+					</telefon_pacient>
+					<data_nasterii_pacient ora_nastere_pac="15:01">1995-03-09</data_nasterii_pacient>
+					<data_inscrierii>2017-11-17</data_inscrierii>
+				</pacient>
+			</lista_pacienti>
+		</doctor>
+	</sectie>	
+</spital>
